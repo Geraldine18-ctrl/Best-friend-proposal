@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fdfbfc">
+
+  <title>A Little Friendshipp Proposal ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --white: #fffdfd;
+      --blue: #dceefa;
+      --blue-dark: #8db8d4;
+      --pink: #f9dce7;
+      --pink-dark: #d994b1;
+      --text: #414451;
+      --muted: #898a98;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      overflow-x: hidden;
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at 10% 15%, #e8f4ff 0%, transparent 38%),
+        radial-gradient(ellipse at 90% 85%, #fce8ef 0%, transparent 40%),
+        var(--white);
+    }
+
+    .decor {
+      position: fixed;
+      font-size: 25px;
+      opacity: 0.55;
+      pointer-events: none;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .decor.one {
+      top: 12%;
+      left: 10%;
+      color: var(--pink-dark);
+    }
+
+    .decor.two {
+      top: 20%;
+      right: 12%;
+      color: var(--blue-dark);
+      animation-delay: 1s;
+    }
+
+    .decor.three {
+      bottom: 14%;
+      left: 15%;
+      color: var(--blue-dark);
+      animation-delay: 2s;
+    }
+
+    .decor.four {
+      bottom: 19%;
+      right: 10%;
+      color: var(--pink-dark);
+      animation-delay: 0.5s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(-5deg); }
+      50% { transform: translateY(-10px) rotate(7deg); }
+    }
+
+    .card {
+      position: relative;
+      width: 100%;
+      max-width: 490px;
+      padding: 52px 32px 35px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      border-radius: 26px;
+      box-shadow: 0 20px 70px rgba(104, 118, 151, 0.10);
+      backdrop-filter: blur(12px);
+      animation: appear 0.8s ease both;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      margin-bottom: 25px;
+      border-radius: 50px;
+      background: #f9e8ef;
+      color: #b77997;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .heart {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 25px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, #e5f3ff, #fce5ed);
+      font-size: 39px;
+      animation: heartbeat 2.2s ease-in-out infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      10% { transform: scale(1.06); }
+      20% { transform: scale(1); }
+      30% { transform: scale(1.04); }
+    }
+
+    h1 {
+      margin: 0 auto 15px;
+      max-width: 390px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(32px, 7vw, 43px);
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    h1 span {
+      color: #d58eac;
+      font-style: italic;
+    }
+
+    .description {
+      max-width: 330px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin: 31px 0 20px;
+    }
+
+    button {
+      min-width: 125px;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 13px;
+      font: 600 14px "DM Sans", sans-serif;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease,
+                  background 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+    }
+
+    button:focus-visible {
+      outline: 3px solid var(--blue-dark);
+      outline-offset: 4px;
+    }
+
+    .yes-button {
+      color: #fff;
+      background: #d995b3;
+      box-shadow: 0 7px 17px rgba(217, 149, 179, 0.22);
+    }
+
+    .yes-button:hover {
+      background: #cd83a4;
+      box-shadow: 0 9px 20px rgba(217, 149, 179, 0.3);
+    }
+
+    .no-button {
+      color: #687f92;
+      background: #e7f3fc;
+    }
+
+    .no-button:hover {
+      background: #d8ebfa;
+    }
+
+    .music-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-width: 0;
+      padding: 10px 15px;
+      margin-top: 15px;
+      border: 1px solid #eee9ed;
+      border-radius: 30px;
+      background: #fff;
+      color: #777687;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .music-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #d995b3;
+    }
+
+    .music-button.playing .music-dot {
+      background: #8ebbd6;
+      box-shadow: 0 0 0 4px #e7f3fc;
+    }
+
+    .footer {
+      margin-top: 26px;
+      color: #b0a9b2;
+      font-size: 10px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .message {
+      display: none;
+      margin: 23px auto 0;
+      padding: 17px 15px;
+      border: 1px solid #f2e6ed;
+      border-radius: 16px;
+      background: linear-gradient(120deg, #fef7fa, #f3f9ff);
+      font-size: 14px;
+      line-height: 1.8;
+      animation: appear 0.4s ease both;
+    }
+
+    .message.show {
+      display: block;
+    }
+
+    .message strong {
+      display: block;
+      margin-bottom: 3px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    .message p {
+      margin: 0;
+      color: #777687;
+    }
+
+    .success-heart {
+      margin-top: 10px;
+      font-size: 22px;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 40px 23px 29px;
+        border-radius: 23px;
+      }
+
+      .decor.one { left: 5%; }
+      .decor.two { right: 5%; }
+      .decor.three { left: 6%; }
+      .decor.four { right: 5%; }
+
+      button {
+        min-width: 112px;
+        padding: 14px 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="decor one" aria-hidden="true">♡</div>
+  <div class="decor two" aria-hidden="true">✧</div>
+  <div class="decor three" aria-hidden="true">♡</div>
+  <div class="decor four" aria-hidden="true">✿</div>
+
+  <main class="card">
+    <div class="badge">A little question for you</div>
+
+    <div class="heart" aria-hidden="true">🩷</div>
+
+    <h1 id="heading">
+     Eazy Will you be my <span>best friend?</span>
+    </h1>
+
+    <p class="description" id="description">
+      Life is a little better with you in it.
+      So, I have a tiny question for you. ♡
+    </p>
+
+    <div class="buttons" id="buttons">
+      <button class="yes-button" id="yesButton" type="button">
+        Yes, of course! ♡
+      </button>
+
+      <button class="no-button" id="noButton" type="button">
+        No 🙈
+      </button>
+    </div>
+
+    <section class="message" id="message" aria-live="polite"></section>
+
+    <button class="music-button" id="musicButton" type="button">
+      <span class="music-dot"></span>
+      <span id="musicLabel">Play our little soundtrack ♫</span>
+    </button>
+
+    <div class="footer">A little friendship, a lot of love</div>
+  </main>
+
+  <!-- Upload your own music file as music.mp3 -->
+  <audio id="backgroundMusic" loop preload="none">
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const yesButton = document.getElementById("yesButton");
+    const noButton = document.getElementById("noButton");
+    const buttons = document.getElementById("buttons");
+    const heading = document.getElementById("heading");
+    const description = document.getElementById("description");
+    const message = document.getElementById("message");
+
+    const music = document.getElementById("backgroundMusic");
+    const musicButton = document.getElementById("musicButton");
+    const musicLabel = document.getElementById("musicLabel");
+
+    let answered = false;
+
+    noButton.addEventListener("click", function () {
+      if (answered) return;
+
+      heading.innerHTML = "Let's try <span>that again.</span> ♡";
+      description.textContent =
+        "Hmm, I think you may have pressed the wrong button. " +
+        "Let's give that another little thought. 🩷";
+
+      noButton.remove();
+
+      yesButton.textContent = "Okay, YES! 💗";
+
+      message.className = "message show";
+      message.innerHTML = `
+        <strong>Let's try that again! ♡</strong>
+        <p>There's only one correct answer left. Hehe. 🩵</p>
+      `;
+    });
+
+    yesButton.addEventListener("click", function () {
+      if (answered) return;
+      answered = true;
+
+      heading.innerHTML = "Best friends, <span>officially!</span>";
+      description.textContent =
+        "Congratulations, you've just made a very important decision. " +
+        "No take-backs. You're stuck with me now. PS: i did not force you🌝";
+
+      buttons.style.display = "none";
+
+      message.className = "message show";
+      message.innerHTML = `
+        <strong>That was easy! 🥹💕</strong>
+        <p>
+          I knew you would make the right choice.
+          Here's to the laughs, the memories, the random and fun conversations,
+          and a friendship worth keeping. ♡
+        </p>
+        <div class="success-heart">🩷 🩵 🤍</div>
+      `;
+
+      // Try to start the music after the person's click.
+      if (music.querySelector("source").getAttribute("src")) {
+        music.play().then(() => {
+          musicButton.classList.add("playing");
+          musicLabel.textContent = "Our soundtrack is playing ♫";
+        }).catch(() => {
+          // They can still start the music using the music button.
+        });
+      }
+    });
+
+    musicButton.addEventListener("click", async function () {
+      if (music.paused) {
+        try {
+          await music.play();
+          musicButton.classList.add("playing");
+          musicLabel.textContent = "Pause our little soundtrack ♫";
+        } catch (error) {
+          musicLabel.textContent = "Add music.mp3 to play a song";
+        }
+      } else {
+        music.pause();
+        musicButton.classList.remove("playing");
+        musicLabel.textContent = "Play our little soundtrack ♫";
+      }
+    });
+
+    music.addEventListener("ended", function () {
+      musicButton.classList.remove("playing");
+      musicLabel.textContent = "Play our little soundtrack ♫";
+    });
+  </script>
+
+</body>
+</html>
